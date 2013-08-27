@@ -50,6 +50,11 @@ describe "temperature conversion functions" do
       ctof(20).should == 68
     end
 
+    it "converts body temperature" do
+      ctof(37).should be_within(0.1).of(98.6)
+      # should be within .1 because you may end up with something that's close (98.600000000000000001) but not exact. Calculators don't round! 
+    end
+
   end
 
 end
